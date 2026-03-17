@@ -2,9 +2,13 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Diego de Jesus</title>
 
 <style>
+
+/* FUNDO */
 body {
   margin: 0;
   background: #b8860b;
@@ -17,58 +21,66 @@ body {
 
 /* CARTÃO */
 .card {
-  background: black;
   width: 320px;
-  height: 600px;
   border-radius: 30px;
-  padding: 20px;
-  text-align: center;
+  overflow: hidden;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
 
-/* LOGO */
-.logo {
-  width: 160px;
-  margin-top: 10px;
-}
-
-/* NOME */
-.nome {
-  color: gold;
-  font-size: 28px;
-  font-family: cursive;
-  margin-top: 10px;
+/* IMAGEM DO CARTÃO */
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 30px;
 }
 
 /* ÍCONES */
 .icons {
   position: absolute;
-  bottom: 40px;
+  bottom: 25px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
+/* ÍCONES INDIVIDUAIS */
 .icons img {
-  width: 55px;
+  width: 85px;
+  animation: pulse 2s infinite;
+  filter: drop-shadow(0 0 6px gold);
   transition: 0.3s;
 }
 
-.icons img:hover {
+/* AO TOCAR */
+.icons img:active {
   transform: scale(1.2);
 }
+
+/* ANIMAÇÃO PULSAR */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px gold);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px gold);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px gold);
+  }
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- CARTÃO -->
 <div class="card">
-
-  <!-- SUA LOGO -->
-  <img class="logo" src="https://i.imgur.com/4ZQZ4Zb.png">
-
-  <div class="nome">Diego de Jesus</div>
-
+  <img src="cartao.png">
 </div>
 
 <!-- ÍCONES CLICÁVEIS -->
